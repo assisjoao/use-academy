@@ -1,9 +1,9 @@
 void main() {
-  String test = "Test";
+  List<double> valoresInteiros = [1, 2, 3];
+  double valor = 2.89;
+  print(valor.toString());
 
-  int age = 21;
-
-  double price = 2.89;
-
-  bool value = true;
+  for (double val in valoresInteiros){
+    print(val.abs());
+  }
 }
