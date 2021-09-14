@@ -1,7 +1,5 @@
 void main() {
-  List<int> valores = [1, 2, 3];
-  for(int value in valores){
-    print(value);
-  }
-
+  List<dynamic> values = [1, 2, "João", 3, 4];
+  
+  print(values.where((element) => element is int && element > 2));
 }
