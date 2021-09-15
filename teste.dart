@@ -4,6 +4,8 @@ class Comer {
 	}
 }
 
+
+
 class Animal extends Comer {
 	@override
 	void comer() {
