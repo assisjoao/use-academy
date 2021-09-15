@@ -1,5 +1,19 @@
-void main() {
-  List<dynamic> values = [1, 2, "João", 3, 4];
-  
-  print(values.where((element) => element is int && element > 2));
+class Comer {
+	void comer(){
+		print("Comeu através da classe Comer");
+	}
+}
+
+class Animal extends Comer {
+	@override
+	void comer() {
+		print("Comeu através da classe Animal");
+	}
+}
+
+class Pessoa extends Comer {
+	@override
+	void comer() {
+		super.comer(); // Saída será "Comeu através da classe Comer"
+	}
 }
