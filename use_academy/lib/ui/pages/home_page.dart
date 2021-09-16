@@ -6,20 +6,18 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          color: Colors.blue,
+      body: SafeArea(
+        child: SizedBox.expand(
+          child: Column(
+            children: [
+              Expanded(
+                child: Container(
+                  color: Colors.green,
+                ),
+              ),
+            ],
           ),
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxHeight: 200,
-            minHeight: 200,),
-            child: Column(
-              children: [
-                Text("Teste"),
-              ],
-            ),
-          ),
-            
+        ),
       ),
     );
   }
