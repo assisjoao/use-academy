@@ -46,28 +46,33 @@ class _MyHomePageState extends State<MyHomePage> {
         
         title: const Text('Use Academy'),
         centerTitle: true,
-
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right: 12.0),
+            child: Icon(Icons.book)),
+        ],
+      ),
+      drawer: Drawer(
+        child: Column(),
       ),
       backgroundColor: Colors.cyan,
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.blue[800],
         onTap: (value) => debugPrint(value.toString()),
         items: const [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home_outlined),
-          label: 'Início',
-          activeIcon: Icon(Icons.home)
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home_outlined),
-          label: 'Início',
-          activeIcon: Icon(Icons.home)
-        ),BottomNavigationBarItem(
-          icon: Icon(Icons.home_outlined),
-          label: 'Início',
-          activeIcon: Icon(Icons.home)
-        ),
-        ],
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined),
+              label: 'Início',
+              activeIcon: Icon(Icons.home)
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_outline_rounded),
+              label: 'Perfil',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_bag_outlined),
+              label: 'Sacola',
+            )],
       
       ),
       body: Center(
