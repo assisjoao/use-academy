@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -79,48 +80,64 @@ class _MyHomePageState extends State<MyHomePage> {
 
       body: SafeArea(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              height: 100,
-              margin: const EdgeInsets.all(24.0),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.purple[400],
-                borderRadius: BorderRadius.circular(16.0),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.blue.withOpacity(0.4),
-                    offset: Offset(4.0,4.0),
-                    blurRadius: 6.0,
-                  ),
-                ],
-              ),
-              child: Text("Meu container"),
-            ),
+            MyContainer(),
+            MyContainer(),
+            MyContainer(),
           ],
-        ))
-      // Center(
-        
-      //   child: Column(
-          
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: <Widget>[
-      //       Text(
-      //         'You have pushed the button this many times:',
-      //       ),
-      //       Text(
-      //         '$_counter',
-      //         style: Theme.of(context).textTheme.headline4,
-      //       ),
-      //     ],
-      //   ),
-      // ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: _incrementCounter,
-      //   tooltip: 'Increment',
-      //   child: Icon(Icons.add),
-      // ), 
+        ),
+      ),
+    );
+  }
+}
+
+class MyContainer extends StatelessWidget {
+  const MyContainer({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 100,
+      width: 200,
+      margin: const EdgeInsets.all(24.0),
+      padding: const EdgeInsets.all(16.0),
+      decoration: BoxDecoration(
+        color: Colors.purple[400],
+        borderRadius: BorderRadius.circular(16.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.blue.withOpacity(0.4),
+            offset: Offset(4.0, 4.0),
+            blurRadius: 6.0,
+          ),
+        ],
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+         Icon(Icons.home),
+         Expanded(
+           child: Text(
+           'Container',
+           maxLines: 2,
+           overflow: TextOverflow.ellipsis,
+           textAlign: TextAlign.center,
+           style: GoogleFonts.poppins(
+             fontSize: 20.0,
+             color: Colors.white,
+             fontWeight: FontWeight.bold,
+             
+           ),
+         ),
+         ),
+         Icon(Icons.home),
+
+        ],
+      ),
     );
   }
 }
