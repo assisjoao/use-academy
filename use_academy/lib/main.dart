@@ -51,6 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.only(right: 12.0),
             child: Icon(Icons.book)),
         ],
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(bottom: Radius.circular(12.0))),
       ),
       drawer: Drawer(
         child: Column(),
