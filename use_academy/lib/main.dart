@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:use_academy/ui/pages/home_page.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -16,50 +18,61 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Use Academy'),
-          centerTitle: true,
-          actions: const [
-            Padding(
-              padding: EdgeInsets.only(right: 12.0),
-              child: Icon(Icons.book),
-            ),
-          ],
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(16.0)),
+      home: const HomePage(),
+    );
+  }
+}
+
+class TestPage extends StatelessWidget {
+  const TestPage({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Use Academy'),
+        centerTitle: true,
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right: 12.0),
+            child: Icon(Icons.book),
           ),
+        ],
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(bottom: Radius.circular(16.0)),
         ),
-        backgroundColor: Colors.white,
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.grey[200],
-          onTap: (value) => debugPrint(value.toString()),
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined),
-              label: 'Inicio',
-              activeIcon: Icon(Icons.home),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline_rounded),
-              label: 'Perfil',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_bag_outlined),
-              label: 'Sacola',
-            ),
-          ],
-        ),
-        body: SafeArea(
-          child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              MyContainer(),
-              MyContainer(),
-              MyContainer(),
-            ],
+      ),
+      backgroundColor: Colors.white,
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.grey[200],
+        onTap: (value) => debugPrint(value.toString()),
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined),
+            label: 'Inicio',
+            activeIcon: Icon(Icons.home),
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline_rounded),
+            label: 'Perfil',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_bag_outlined),
+            label: 'Sacola',
+          ),
+        ],
+      ),
+      body: SafeArea(
+        child: Column(
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: const [
+            MyContainer(),
+            MyContainer(),
+            MyContainer(),
+          ],
         ),
       ),
     );
