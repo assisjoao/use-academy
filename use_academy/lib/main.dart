@@ -127,15 +127,15 @@ class MyContainer extends StatelessWidget {
            overflow: TextOverflow.ellipsis,
            textAlign: TextAlign.center,
            style: GoogleFonts.poppins(
-             fontSize: 20.0,
-             color: Colors.white,
-             fontWeight: FontWeight.bold,
-             
-           ),
-         ),
-         ),
-         Icon(Icons.home),
-
+                fontSize: 20.0,
+                fontWeight: FontWeight.w400,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          const FlutterLogo(
+            size: 32.0,
+          ),
         ],
       ),
     );
