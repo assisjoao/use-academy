@@ -10,10 +10,11 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: SizedBox.expand(
           child: Container(
-            color: Colors.amber,
-            child: GestureDetector(
-              onDoubleTapDown: (details) => debugPrint(details.localPosition.dx.toString()),              
-              child: Container(color: Colors.green),
+            child: IgnorePointer(
+              child: ElevatedButton(
+                onPressed: () => debugPrint('apertou'),
+                child: const Text('Button'),
+              ),
             ),
           ),
         ),
