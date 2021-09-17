@@ -8,20 +8,32 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        child: SizedBox.expand(
           child: Container(
             color: Colors.white,
-            child: ListView.separated(
-              separatorBuilder: (context, index) => const SizedBox(height: 16.0),
-              itemBuilder: (context, index) {
-                return Container(
-                color: Colors.blueGrey,
-                height: 200,
-                alignment: Alignment.center,
-                );
-              },
-              itemCount: 10,
+            child: Wrap(
+              spacing: 16.0,
+              alignment: WrapAlignment.center,
+              children: [
+                Chip(
+                  label: const Text('Teste Wrap'),
+                  deleteIcon: const Icon(Icons.close_rounded),
+                  onDeleted: () {},
+                ),
+                Chip(
+                  label: const Text('Teste Wrap'),
+                  deleteIcon: const Icon(Icons.close_rounded),
+                  onDeleted: () {},
+                ),
+                Chip(
+                  label: const Text('Teste Wrap'),
+                  deleteIcon: const Icon(Icons.close_rounded),
+                  onDeleted: () {},
+                ),
+              ],
             ),
           ),
+        ),
       ),
     );
   }
