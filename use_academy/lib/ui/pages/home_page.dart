@@ -57,7 +57,10 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                      //startGame(),
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Questions()),
+                );
                       },
                       child: const Text(
                         'START',
@@ -73,3 +76,20 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+class Questions extends StatelessWidget {
+  const Questions({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Perguntas e Respostas'),
+        centerTitle: true,
+      ),
+    );
+  }
+}
+
