@@ -16,11 +16,11 @@ class HomePage extends StatelessWidget {
             color: Colors.blue[200],
             child: Container(
               height: 200,
-              margin: const EdgeInsets.all(30),
-              padding: const EdgeInsets.all(30),
+              margin: const EdgeInsets.all(30.0),
+              padding: const EdgeInsets.all(30.0),
               alignment: Alignment.topCenter,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(36),
+                borderRadius: BorderRadius.circular(36.0),
                 color: Colors.white,
               ),
               child: Column(
@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(16.0),
                           ),
                         ),
                       ),
@@ -88,6 +88,42 @@ class Questions extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Perguntas e Respostas'),
         centerTitle: true,
+      ),
+      body: SafeArea(
+        child:  Column(
+          children: [
+            Container(
+              alignment: Alignment.bottomLeft,
+              margin: const EdgeInsets.all(16.0),
+              child: const Text(
+                'Qual é a altura do Cristo Redentor?',
+                style: TextStyle(
+                  fontSize: 20.0,
+                ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.bottomLeft,
+              margin: const EdgeInsets.all(16.0),
+              child: const Text(
+                'Respostas',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.blue,
+                ),
+              ),
+            ),
+            Container(
+              height: 100,
+              margin: const EdgeInsets.all(16.0),
+              alignment: Alignment.topCenter,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16.0),
+                border: Border.all(color: Colors.grey),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
